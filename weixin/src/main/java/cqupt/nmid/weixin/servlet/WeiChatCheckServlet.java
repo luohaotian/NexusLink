@@ -1,6 +1,6 @@
 package cqupt.nmid.weixin.servlet;
 
-import cqupt.nmid.weixin.model.TextMessage;
+import cqupt.nmid.weixin.model.GlobalConstant;
 import cqupt.nmid.weixin.util.CheckUtil;
 import cqupt.nmid.weixin.util.MessageUtil;
 import org.dom4j.DocumentException;
@@ -50,15 +50,20 @@ public class WeiChatCheckServlet extends HttpServlet {
             String content = map.get("Content");
 
             String message = null;
-            if("text".equals(msgType)){
-                TextMessage text = new TextMessage();
-                text.setFromUserName(toUserName);
-                text.setToUserName(fromUserName);
-                text.setMsgType("text");
-                //text.setCreatTime(new Date().getTime());
-                text.setContent("您所发送的消息是：" + content );
-                message = MessageUtil.textMessageToXml(text);
-                System.out.print(message);
+            if(GlobalConstant.MESSAGE_TEXT.equals(msgType)){
+                if ("1".equals(content)){
+                    message = MessageUtil.initText(toUserName,fromUserName,"研究中心主页！");
+                }else if("2".equals(content)){
+                    message = MessageUtil.initText(toUserName,fromUserName,"成员签到表！");
+                }else if("?".equals(content)||"？".equals(content)){
+                    message = MessageUtil.initText(toUserName,fromUserName,MessageUtil.MenuText());
+                }
+
+            }else if (GlobalConstant.MESSAGE_EVENT.equals(msgType)){
+                String eventType = map.get("Event");
+                if (GlobalConstant.MESSAGE_SUBSCRIBLE.equals(eventType)){
+                    message = MessageUtil.initText(toUserName,fromUserName,MessageUtil.MenuText());
+                }
             }
             out.print(message);
 

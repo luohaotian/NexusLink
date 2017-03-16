@@ -1,6 +1,7 @@
 package cqupt.nmid.weixin.util;
 
 import com.thoughtworks.xstream.XStream;
+import cqupt.nmid.weixin.model.GlobalConstant;
 import cqupt.nmid.weixin.model.TextMessage;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -10,6 +11,7 @@ import sun.plugin.dom.core.Document;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +50,23 @@ public class MessageUtil {
         XStream xstream = new XStream();
         xstream.alias("xml", tx.getClass());
         return xstream.toXML(tx);
+    }
 
+    public static String initText(String toUserName,String fromUserName,String content){
+        TextMessage text = new TextMessage();
+        text.setFromUserName(toUserName);
+        text.setToUserName(fromUserName);
+        text.setMsgType(GlobalConstant.MESSAGE_TEXT);
+        text.setCreatTime(String.valueOf(new Date().getTime()));
+        return MessageUtil.textMessageToXml(text);
+    }
 
+    public  static  String MenuText(){
+        StringBuffer sb = new StringBuffer();
+        sb.append("欢迎您的关注，请按以下提示回复：\n\n");
+        sb.append("1、进入研究中心主页\n");
+        sb.append("2、成员查看签到情况\n\n");
+        sb.append("回复？调出此菜单。");
+        return sb.toString();
     }
 }

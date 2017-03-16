@@ -1,6 +1,7 @@
 package cqupt.nmid.weixin.model;
 
-/**
+/**创建一个文本类，对用户传过来的数据和我将要给用户传递的数据进行格式统一
+ * 方便文本与xml之间的转换
  * Created by 罗浩 on 2017/3/15.
  */
 public class TextMessage {
@@ -31,9 +32,7 @@ public class TextMessage {
         return CreatTime;
     }
 
-    public void setCreatTime(String creatTime) {
-        CreatTime = creatTime;
-    }
+    public void setCreatTime(String creatTime) {CreatTime = creatTime;}
 
     public String getMsgType() {
         return MsgType;
