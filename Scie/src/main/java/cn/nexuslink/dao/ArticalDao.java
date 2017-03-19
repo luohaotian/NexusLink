@@ -17,18 +17,28 @@ public interface ArticalDao {
     public ArticalModel getArticalById(int id);
 
     /**
-     * 通过栏目id和当前页数以及所需行数得到对应栏目分页后的文章列表
-     * @param cid
+     * 获得学院主页中新闻快讯中的文章列表，该列表中的新闻必须含有图片
+     * @param limit
      * @return
      */
-    public ArrayList<ArticalModel> getNorArticalsByCid(int cid);
+
+    public ArrayList<ArticalModel> getNorArticalsWithPic(int limit);
 
     /**
-     * 通过当前页数和所需行数得到重点推荐的文章分页后的列表
+     * 返回新闻快讯中的文章列表，实现分页功能
+     * @param cid
      * @param pageCount
      * @param limit
      * @return
      */
-    public ArrayList<ArticalModel> getImpArticals(int pageCount,int limit);
+    public ArrayList<ArticalModel> getNorArticalsByCid(int cid, int pageCount, int limit);
 
+    /**
+     * 返回重点推荐文章列表
+     * @param limit
+     * @return
+     */
+    public ArrayList<ArticalModel> getImpArticalsWithPic(int limit);
+
+    String getTitle(int id);
 }

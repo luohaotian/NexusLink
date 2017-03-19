@@ -1,18 +1,17 @@
-package cn.nexuslink.dao.mapper;
+package cn.nexuslink.dao.rowCallackHandler;
 
 import cn.nexuslink.model.ArticalModel;
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.RowCallbackHandler;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**从数据库获得artical行所有数据，后续可转换成所需的ArticalMessageModel
- * Created by 罗浩 on 2017/3/18.
+/**返回有序的artical列表，maprow是无序的list集合
+ * Created by 罗浩 on 2017/3/19.
  */
-public class articalMapper implements RowMapper<ArticalModel> {
-
+public class ArticalRowCallbackHandler implements RowCallbackHandler{
     @Override
-    public ArticalModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+    public void processRow(ResultSet rs) throws SQLException {
         ArticalModel am = new ArticalModel();
         am.setId(rs.getInt("id"));
         am.setCategoryId(rs.getInt("cid"));
@@ -37,6 +36,6 @@ public class articalMapper implements RowMapper<ArticalModel> {
         am.setComment(rs.getInt("comment"));
         am.setCreateAt(rs.getTimestamp("created_at"));
         am.setUpdateAt(rs.getTimestamp("updated_at"));
-        return am;
+
     }
 }

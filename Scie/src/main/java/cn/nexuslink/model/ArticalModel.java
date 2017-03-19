@@ -21,7 +21,7 @@ public class ArticalModel implements Serializable {
     private String url;
     private int position;
     private int viewCount;
-    private int comentCount;
+    private int commentCount;
     private Date publishDate;
     private int status;
     private int modelId;
@@ -30,6 +30,16 @@ public class ArticalModel implements Serializable {
     private String keyWords;
     private String description;
     private int voteId;
+    private int comment;
+
+    public int getComment() {
+        return comment;
+    }
+
+    public void setComment(int comment) {
+        this.comment = comment;
+    }
+
     private Timestamp createAt;
     private Timestamp updateAt;
 
@@ -125,12 +135,12 @@ public class ArticalModel implements Serializable {
         this.viewCount = viewCount;
     }
 
-    public int getComentCount() {
-        return comentCount;
+    public int getCommentCount() {
+        return commentCount;
     }
 
-    public void setComentCount(int comentCount) {
-        this.comentCount = comentCount;
+    public void setCommentCount(int comentCount) {
+        this.commentCount = comentCount;
     }
 
     public Date getPublishDate() {

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="Scie:war exploded">
-    <output-path>$PROJECT_DIR$/target/scie</output-path>
+    <output-path>E:/后台软件/apache-tomcat-9.0.0.M9/webapps/Scie</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -27,6 +27,11 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:5.0.1.Final" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.1.1.GA" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:0.8.0" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
         </element>
       </element>
       <element id="directory" name="META-INF">

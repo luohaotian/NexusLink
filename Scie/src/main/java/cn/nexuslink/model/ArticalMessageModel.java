@@ -89,7 +89,7 @@ public class ArticalMessageModel {
         tem.setViewCount(am.getViewCount());
         tem.setCover(am.getCover());
         tem.setPublishDate(am.getPublishDate());
-        tem.setCommentCount(am.getComentCount());
+        tem.setCommentCount(am.getCommentCount());
         return tem;
     }
 
