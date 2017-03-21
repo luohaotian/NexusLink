@@ -26,6 +26,19 @@
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 
 
+	<bean id="conversionService"
+		  class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="cn.nexuslink.util.conveterUtils.StringToDateConverter">
+					<constructor-arg type="java.lang.String"
+									 value="yyyy-MM-dd hh:MM:ss"/>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<mvc:annotation-driven
+			conversion-service="conversionService"/>
 
 
 </beans>

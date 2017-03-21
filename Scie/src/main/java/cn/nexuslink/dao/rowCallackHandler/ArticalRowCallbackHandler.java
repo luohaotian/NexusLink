@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.RowCallbackHandler;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**返回有序的artical列表，maprow是无序的list集合
+/**这个没有用处。暂时留着
  * Created by 罗浩 on 2017/3/19.
  */
 public class ArticalRowCallbackHandler implements RowCallbackHandler{

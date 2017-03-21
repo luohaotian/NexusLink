@@ -26,6 +26,12 @@ public class CategoryImpl implements  CategoryDao {
     }
 
     @Override
+    public List<EasyCategoryModel> getEasyCategoryList() {
+        String sql = "Select id,title,pid FROM category ";
+        return jdbcTemplate.query(sql,new EasyCategoryMapper());
+    }
+
+    @Override
     public List<EasyCategoryModel> getLowCategoryList(int id) {
 
         String sql = "SELECT  FROM category WHERE pid =0 ORDER BY id ";

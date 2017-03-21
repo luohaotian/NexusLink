@@ -14,7 +14,8 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 注册注解驱动特性 -->
-	<mvc:annotation-driven  />
+	<<mvc:annotation-driven
+		conversion-service="conversionService"/>
 
 	<!-- 开启注解装配 -->
 	<context:annotation-config />
@@ -24,6 +25,19 @@
 	<!--<mvc:resources mapping="resources/**" location="resources/" />-->
 
 	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+
+	<bean id="conversionService"
+		  class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="cn.nexuslink.util.conveterUtils.StringToDateConverter">
+					<constructor-arg type="java.lang.String"
+									 value="yyyy-MM-dd hh:MM:ss"/>
+				</bean>
+			</list>
+		</property>
+	</bean>
 
 
 

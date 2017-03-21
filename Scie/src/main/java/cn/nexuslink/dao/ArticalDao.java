@@ -18,7 +18,7 @@ public interface ArticalDao {
 
     /**
      * 获得学院主页中新闻快讯中的文章列表，该列表中的新闻必须含有图片
-     * @param limit
+     * @param limit 所需要的文章数
      * @return
      */
 
@@ -28,14 +28,14 @@ public interface ArticalDao {
      * 返回新闻快讯中的文章列表，实现分页功能
      * @param cid
      * @param pageCount
-     * @param limit
+     * @param limit 所需要的文章数
      * @return
      */
     public ArrayList<ArticalModel> getNorArticalsByCid(int cid, int pageCount, int limit);
 
     /**
      * 返回重点推荐文章列表
-     * @param limit
+     * @param limit 所需要的文章数
      * @return
      */
     public ArrayList<ArticalModel> getImpArticalsWithPic(int limit);

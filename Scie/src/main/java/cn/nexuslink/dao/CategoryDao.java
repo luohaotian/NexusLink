@@ -10,11 +10,16 @@ import java.util.List;
  */
 public interface CategoryDao {
     /**
-     * 通过该方法返回栏目表的所有信息，前端能够很简单地进行判别，其余方法均可不用，但暂时保留着，只用这一个方法
+     * 通过该方法返回栏目表的所有信息，前端能够直接根据pid很简单地进行判别
      * @return
      */
     public List getAllCategoryList();
 
+    /**
+     * 获得Category表中所有行的id,pid,name信息放在Easycategory中
+     * @return
+     */
+    public List<EasyCategoryModel> getEasyCategoryList();
 
     /**
      * 通过一级栏目的id对于二级栏目的pid得到二级栏目列表，里面只包含二级栏目的id与title
