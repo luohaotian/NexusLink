@@ -40,7 +40,8 @@ public class ArticalDaoImpl implements ArticalDao {
 
     @Override
     public ArrayList<ArticalModel> getImpArticalsWithPic( int limit) {
-        String sql = "SELECT * FROM article where position> 0 ORDER BY created_at DESC LIMIT ?";
+        String sql = "SELECT * FROM article where position> 0 AND ISNULL(cover)=0 " +
+                "AND cover!='' ORDER BY created_at DESC limit ?";
         return (ArrayList<ArticalModel>) jdbcTemplate.query(sql,new Object[]{limit},new articalMapper());
     }
 

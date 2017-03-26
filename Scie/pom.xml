@@ -99,6 +99,20 @@
       <version>2.5</version>
     </dependency>
 
+    <!--添加缓存依赖-->
+    //ehcache依赖
+    <dependency>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache-core</artifactId>
+      <version>2.6.11</version>
+    </dependency>
+     //guava cache依赖
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>18.0</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>scie</finalName>

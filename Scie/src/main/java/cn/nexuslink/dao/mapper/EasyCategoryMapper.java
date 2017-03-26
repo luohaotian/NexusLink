@@ -11,7 +11,7 @@ import java.sql.SQLException;
  */
 public class EasyCategoryMapper implements RowMapper{
     @Override
-    public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+    public EasyCategoryModel mapRow(ResultSet rs, int rowNum) throws SQLException {
         EasyCategoryModel eam = new EasyCategoryModel();
         eam.setId(rs.getInt("id"));
         eam.setPid(rs.getInt("pid"));

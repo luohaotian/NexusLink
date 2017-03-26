@@ -40,5 +40,7 @@
 	<mvc:annotation-driven
 			conversion-service="conversionService"/>
 
+	<bean id="cacheManager" class="org.springframework.cache.CacheManager"/>
+
 
 </beans>

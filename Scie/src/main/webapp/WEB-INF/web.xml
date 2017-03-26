@@ -36,6 +36,8 @@
     <param-value>
       classpath:Scie-dao.xml,
       classpath:Scie-service.xml
+      classpath:Scie-servlet.xml
+      classpath:Scie-cache.xml
     </param-value>
   </context-param>
   <!-- spring 上下文加载器 -->

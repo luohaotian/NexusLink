@@ -5,6 +5,7 @@ import cn.nexuslink.dao.mapper.EasyCategoryMapper;
 import cn.nexuslink.model.CategoryModel;
 import cn.nexuslink.model.EasyCategoryModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -20,21 +21,24 @@ public class CategoryImpl implements  CategoryDao {
     private JdbcTemplate jdbcTemplate;
 
     @Override
+    @Cacheable(value = "category")
     public List<CategoryModel> getAllCategoryList() {
         String sql = "SELECT * FROM category ";
         return jdbcTemplate.query(sql,new CategoryMapper());
     }
 
     @Override
+    @Cacheable(value = "category")
     public List<EasyCategoryModel> getEasyCategoryList() {
         String sql = "Select id,title,pid FROM category ";
         return jdbcTemplate.query(sql,new EasyCategoryMapper());
     }
 
     @Override
+    @Cacheable(value = "category")
     public List<EasyCategoryModel> getLowCategoryList(int id) {
 
-        String sql = "SELECT  FROM category WHERE pid =0 ORDER BY id ";
+        String sql = "SELECT  FROM category WHERE pid =? ORDER BY id ";
         return jdbcTemplate.query(sql,new Object[]{id},new EasyCategoryMapper());
     }
 
