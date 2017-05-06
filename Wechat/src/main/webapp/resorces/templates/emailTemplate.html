@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FindPassword  email template</title>
+</head>
+<body>
+     您好，这是重庆邮电大学微信公众号密码修改邮件，请点击下面链接完成密码修改,<br/>
+     <a href="#" th:href="@{ http://www.Wechat.com/resetPassword/{sign}(sign=${sign})&{id}(id=${id})}">修改密码</a>
+</body>
+</html>
