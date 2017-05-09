@@ -59,6 +59,20 @@
       <artifactId>spring-jdbc</artifactId>
       <version>4.1.7.RELEASE</version>
     </dependency>
+
+     <!--spring-mail-->
+    <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+      <version>1.4.7</version>
+    </dependency>
+
+    <!--spring-boot-thymeleaf-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      <version></version>
+    </dependency>
     <!-- spring-web -->
     <dependency>
       <groupId>org.springframework</groupId>

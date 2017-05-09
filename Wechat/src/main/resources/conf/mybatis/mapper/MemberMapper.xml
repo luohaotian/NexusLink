@@ -32,4 +32,8 @@
         SELECT * FROM member WHERE realname=#{name}
     </select>
 
+    <select id="getEmailByRealname" parameterType="String" resultType="String">
+        SELECT email FROM member WHERE realname = #{realname}
+    </select>
+
 </mapper>

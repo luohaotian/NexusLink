@@ -23,6 +23,9 @@ public interface MemberMapper extends IMemberDao {
     public int getMemberIdByName(@Param("name") String name);
 
     @Override
+    String getEmailByRealname(@Param("realname") String realname);
+
+    @Override
     public List<Member> getMembers(@Param("isnow") int isnow);
 
     @Override

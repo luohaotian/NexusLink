@@ -31,6 +31,14 @@ public interface IMemberDao {
     public Member getMemberByName(String name);
 
     /**
+     * 得到用户邮件
+     * @param realname  用户真实名
+     * @return
+     */
+    public String getEmailByRealname(String realname);
+
+
+    /**
      * 添加新的成员，注册时
      * @param member
      * @return

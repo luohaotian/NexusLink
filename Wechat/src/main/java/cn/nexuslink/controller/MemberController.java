@@ -1,14 +1,17 @@
 package cn.nexuslink.controller;
 
+import cn.nexuslink.dao.IMemberDao;
 import cn.nexuslink.pojo.Member;
 import cn.nexuslink.pojo.constant.StatusCode;
 import cn.nexuslink.pojo.group.AddMember;
 import cn.nexuslink.pojo.group.LoginMember;
 import cn.nexuslink.pojo.json.ResponseJson;
 import cn.nexuslink.service.impl.CacheService;
+import cn.nexuslink.service.impl.JavaMaiService;
 import cn.nexuslink.service.impl.MemberService;
 import cn.nexuslink.utils.CookieUtil;
 import cn.nexuslink.utils.HashPasswordUtil;
+import cn.nexuslink.utils.UUidCreatUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +23,12 @@ import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
-import static cn.nexuslink.pojo.constant.StatusCode.TOKEN_NOT_EXIST;
+import static cn.nexuslink.pojo.constant.StatusCode.*;
 
 
 /**
@@ -39,6 +43,12 @@ public class MemberController {
 
     @Resource
     private CacheService cacheService;
+
+    @Resource
+    private JavaMaiService javaMaiService;
+
+    @Resource
+    private IMemberDao memberDao;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
 
@@ -96,6 +106,34 @@ public class MemberController {
         if (memberService.updateMember(member))
             return new ResponseJson(StatusCode.CREATED.getCode(),StatusCode.CREATED.getMessage(),member);
         return new ResponseJson(StatusCode.INTERNAL_SERVER_ERROR.getCode(),StatusCode.INTERNAL_SERVER_ERROR.getMessage(),"服务器内部更新失败！");
+    }
+
+    @RequestMapping(value = "/findPassword", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseJson findPassword(@RequestParam("realname")@NotNull String realname, @RequestParam("Vcode") @NotNull String Vcode, HttpServletRequest request) {
+        String correctVcode = (String) request.getSession().getAttribute("Vcode");
+        if(!Vcode.equals(correctVcode))
+            return new ResponseJson(INVALID_REQUEST.getCode(),INVALID_REQUEST.getMessage(),"验证码输入错误！");
+        Member mb = memberDao.getMemberByName(realname);
+        String mail = mb.getEmail();
+        if (mb== null || mail==null||mail.equals(' ')) {
+            return new ResponseJson(INVALID_REQUEST.getCode(),INVALID_REQUEST.getMessage(),"不存在该用户或者该用户没预留邮箱！");
+        }
+        String findKey= UUidCreatUtil.creatUUid();
+        cacheService.addToCache("findCodeToken",findKey,mb.getId());
+        String url = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()
+                +"/"+"member/retrieve" +"?findKey=" + findKey;
+        String content = "您好，这是重庆邮电大学互联网研究中心微信公众号密码修改邮件，请点击下面链接完成密码修改<br/>" +
+                "重置密码连接<a href="+url+">点击进入重置页面</a>";
+        javaMaiService.sendHtmlMail(mail,"找回密码",content);
+        return new ResponseJson(OK.getCode(), OK.getMessage(), "找回密码的邮件已发送，请进入邮件修改密码！");
+    }
+
+    public ResponseJson tetrive(@RequestParam("newPassword") @NotNull String newPassword,
+                                @RequestParam("ensurePassword") @NotNull String ensurePassword,
+                                @RequestParam("Vcode") @NotNull String Vcode, @RequestParam("findKey") String findKey,
+                                HttpServletRequest request) {
+        if (!newPassword.equals(ensurePassword)||)
     }
 
 }

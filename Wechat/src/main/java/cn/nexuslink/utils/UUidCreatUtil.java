@@ -8,7 +8,7 @@ import java.util.UUID;
  */
 public class UUidCreatUtil {
 
-    public static UUID creatUUid(){
+    public static String creatUUid(){
         return UUID.randomUUID();
     }
 
