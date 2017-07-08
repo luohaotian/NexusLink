@@ -1,0 +1,70 @@
+/*normalize*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, legend, button
+form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html, body {
+    background: #f1eef2;
+    color: #635c5c;
+    font-size: 14px;
+    font-family: "Microsoft YaHei UI";
+    position: relative;
+    height: 100%;
+}
+
+input, textarea, select, a {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+}
+
+/*hint panel*/
+#hint_panel{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#hint_panel p{
+    height: 20%;
+    width: 30%;
+    position: relative;
+    top: 40%;
+    left: 35%;
+    text-align: center;
+    font-size: 45px;
+    color: #b6aeae;
+}
+
+/*info panel*/
+#info_panel{
+    padding-top: 20px;
+}
+
+.info_item{
+    margin: 20px 0;
+    font-size: 20px;
+    display: none;
+}
+
+.info_item table{
+    width: 70%;
+    margin: 0 15%;
+}
+
+.info_item table td{
+    text-align: center;
+    width: 80px;
+}
+
+.info_item table td:last-child{
+    width: 150px;
+}
