@@ -7,6 +7,7 @@ import com.pojo.RecordVO;
 import com.pojo.StudentDO;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import java.util.Random;
  * Created by ÂÞºÆ on 2017/6/6.
  */
 @Service("showDataService")
-//@Transactional
+@Transactional
 public class ShowDataService {
 
     @Resource

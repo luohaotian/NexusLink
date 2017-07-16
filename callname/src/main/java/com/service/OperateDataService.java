@@ -4,6 +4,7 @@ import com.dao.IRecordDao;
 import com.dao.IStudentDao;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -11,7 +12,7 @@ import javax.annotation.Resource;
  * Created by ÂÞºÆ on 2017/6/6.
  */
 @Service("operateDataService")
-//@Transactional
+@Transactional
 public class OperateDataService {
 
     @Resource
