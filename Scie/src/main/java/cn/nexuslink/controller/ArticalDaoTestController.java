@@ -4,8 +4,6 @@ import cn.nexuslink.dao.ArticalDao;
 import cn.nexuslink.dao.CategoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.cache.Cache;
-import org.springframework.cache.guava.GuavaCacheManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,13 +27,6 @@ public class ArticalDaoTestController {
     @Autowired
     @Qualifier(value = "categoryDao")
     private CategoryDao categoryDao;
-
-    @Autowired
-    @Qualifier(value = "guavaCacheManager")
-    private GuavaCacheManager cacheManager;
-
-    private Cache category=cacheManager.getCache("category");
-
 
     @RequestMapping(value = "/getArtical")
     public String getArticalTitle(HttpServletRequest request,HttpServletResponse response) {

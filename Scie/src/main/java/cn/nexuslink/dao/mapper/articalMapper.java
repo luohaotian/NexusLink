@@ -1,6 +1,7 @@
 package cn.nexuslink.dao.mapper;
 
-import cn.nexuslink.model.ArticalModel;
+import cn.nexuslink.model.ArticalDO;
+import cn.nexuslink.util.TimeUtil;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -9,11 +10,11 @@ import java.sql.SQLException;
 /**从数据库获得artical行所有数据，后续可转换成所需的ArticalMessageModel
  * Created by 罗浩 on 2017/3/18.
  */
-public class articalMapper implements RowMapper<ArticalModel> {
+public class articalMapper implements RowMapper<ArticalDO> {
 
     @Override
-    public ArticalModel mapRow(ResultSet rs, int rowNum) throws SQLException {
-        ArticalModel am = new ArticalModel();
+    public ArticalDO mapRow(ResultSet rs, int rowNum) throws SQLException {
+        ArticalDO am = new ArticalDO();
         am.setId(rs.getInt("id"));
         am.setCategoryId(rs.getInt("cid"));
         am.setUserId(rs.getInt("uid"));
@@ -35,8 +36,9 @@ public class articalMapper implements RowMapper<ArticalModel> {
         am.setDescription(rs.getString("description"));
         am.setVoteId(rs.getInt("vote_id"));
         am.setComment(rs.getInt("comment"));
-        am.setCreateAt(rs.getTimestamp("created_at"));
-        am.setUpdateAt(rs.getTimestamp("updated_at"));
+        am.setCreateAt(TimeUtil.timestamp2String(rs.getTimestamp("created_at")).substring(0, 10));
+        am.setUpdateAt(TimeUtil.timestamp2String(rs.getTimestamp("updated_at")).substring(0, 10));
         return am;
     }
+
 }

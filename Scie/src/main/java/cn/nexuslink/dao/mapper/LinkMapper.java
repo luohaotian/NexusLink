@@ -1,6 +1,6 @@
 package cn.nexuslink.dao.mapper;
 
-import cn.nexuslink.model.LinkModel;
+import cn.nexuslink.model.LinkDO;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -11,8 +11,8 @@ import java.sql.SQLException;
  */
 public class LinkMapper implements RowMapper {
     @Override
-    public LinkModel mapRow(ResultSet rs, int rowNum) throws SQLException {
-        LinkModel lm = new LinkModel();
+    public LinkDO mapRow(ResultSet rs, int rowNum) throws SQLException {
+        LinkDO lm = new LinkDO();
         lm.setLinkName(rs.getString("title"));
         lm.setUrl(rs.getString("url"));
         return lm;

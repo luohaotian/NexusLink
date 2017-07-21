@@ -1,6 +1,6 @@
 package cn.nexuslink.dao.mapper;
 
-import cn.nexuslink.model.CategoryModel;
+import cn.nexuslink.model.CategoryDO;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -9,11 +9,11 @@ import java.sql.SQLException;
 /**从数据库获得行所有数据，后续可转换成所需的CategoryMessageModel
  * Created by 罗浩 on 2017/3/19.
  */
-public class CategoryMapper implements RowMapper {
+public class CategoryMapper implements RowMapper<CategoryDO> {
     @Override
-    public CategoryModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+    public CategoryDO mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-        CategoryModel am = new CategoryModel();
+        CategoryDO am = new CategoryDO();
         am.setId(rs.getInt("id"));
         am.setName(rs.getString("name"));
         am.setTitle(rs.getString("title"));

@@ -1,5 +1,7 @@
 package cn.nexuslink.dao;
 
+import cn.nexuslink.model.LinkDO;
+
 import java.util.ArrayList;
 
 /**
@@ -11,5 +13,5 @@ public interface LinkDao {
      * @param limit 友情链接返回个数
      * @return
      */
-    public ArrayList<LinkDao> getLinks(int limit);
+    public ArrayList<LinkDO> getLinks(int limit);
 }
