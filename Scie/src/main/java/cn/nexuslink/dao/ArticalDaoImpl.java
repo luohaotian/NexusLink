@@ -3,6 +3,7 @@ package cn.nexuslink.dao;
 import cn.nexuslink.dao.mapper.articalMapper;
 import cn.nexuslink.model.ArticalDO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -19,12 +20,14 @@ public class ArticalDaoImpl implements ArticalDao {
     private JdbcTemplate jdbcTemplate;
 
     @Override
+    //@Cacheable(value = "artical")
     public ArticalDO getArticalById(int id) {
         String sql="Select * From article Where id = ?";
         return jdbcTemplate.queryForObject(sql,new Object[]{id},new articalMapper());
     }
 
     @Override
+    @Cacheable(value = "artical")
     public List<ArticalDO> getNorArticalsWithPic(int limit) {
         String sql = "SELECT * FROM article WHERE ISNULL(cover)=0 " +
                 "AND cover!='' ORDER BY created_at DESC LIMIT ?";
@@ -32,6 +35,7 @@ public class ArticalDaoImpl implements ArticalDao {
     }
 
     @Override
+    @Cacheable(value = "artical")
     public List<ArticalDO> getNorArticalsByCid(int cid, int pageCount, int limitLine) {
         String sql = "SELECT * FROM article WHERE cid = ? ORDER BY created_at DESC limit ?,?";
         return  jdbcTemplate.query(sql,new Object[]{cid,(pageCount-1)*limitLine,limitLine},new articalMapper());

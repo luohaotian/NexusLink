@@ -17,7 +17,7 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-
+<!--配置springmvc-->
   <servlet>
     <servlet-name>Scie</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -38,7 +38,8 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>
       classpath:Scie-dao.xml,
-      classpath:Scie-service.xml
+      classpath:Scie-service.xml,
+      classpath:Scie-cache.xml
     </param-value>
   </context-param>
   <!-- spring 上下文加载器 -->

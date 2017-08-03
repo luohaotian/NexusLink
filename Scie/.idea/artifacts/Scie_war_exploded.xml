@@ -41,6 +41,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
