@@ -1,0 +1,182 @@
+11:41:54,386  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:41:55,790  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:41:55,792  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:41:55,801  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:41:55,802  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:41:55,804  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:41:55,815 DEBUG NativeHttpClient:121 - Send request - POST https://api.im.jpush.cn/v1/users
+11:41:55,816 DEBUG NativeHttpClient:123 - Request Content - [{"username":"luohao2017","password":"luo140610"}]
+11:41:57,149 DEBUG ResponseWrapper:40 - JPush API Rate Limiting params - quota:600, remaining:599, reset:60
+11:41:57,149 DEBUG NativeHttpClient:192 - Succeed to get response OK - responseCode:201
+11:41:57,149 DEBUG NativeHttpClient:193 - Response Content - [{"username":"luohao2017"}]
+11:41:57,150  INFO JUserHelper:56 - [{"username":"luohao2017"}]
+11:43:48,438  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:43:48,996  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:43:48,997  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:43:48,999  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:43:49,000  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:43:49,001  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:43:49,013 DEBUG NativeHttpClient:121 - Send request - POST https://api.im.jpush.cn/v1/users
+11:43:49,013 DEBUG NativeHttpClient:123 - Request Content - [{"username":"luohao2017","password":"luo140610"}]
+11:43:49,518 DEBUG ResponseWrapper:40 - JPush API Rate Limiting params - quota:600, remaining:599, reset:60
+11:43:49,518  WARN NativeHttpClient:199 - Got error response - responseCode:403, responseContent:[{"username":"luohao2017","error":{"code":899001,"message":"user exist"}}]
+11:43:49,518 ERROR NativeHttpClient:211 - Request is forbidden! Maybe your appkey is listed in blacklist or your params is invalid.
+11:43:49,550 ERROR JUserHelper:61 - Error response from JPush server. Should review and fix it. 
+{}
+	at cn.jiguang.common.connection.NativeHttpClient._doRequest(NativeHttpClient.java:235)
+	at cn.jiguang.common.connection.NativeHttpClient.doRequest(NativeHttpClient.java:99)
+	at cn.jiguang.common.connection.NativeHttpClient.sendPost(NativeHttpClient.java:86)
+	at cn.jmessage.api.user.UserClient.registerUsers(UserClient.java:72)
+	at cn.jmessage.api.JMessageClient.registerUsers(JMessageClient.java:120)
+	at cn.nexuslink.WeNavi.common.JUserHelper.registerUsers(JUserHelper.java:55)
+	at cn.nexuslink.WeNavi.common.JUserHelper.main(JUserHelper.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+11:43:49,572  INFO JUserHelper:62 - HTTP Status: 403
+11:43:49,572  INFO JUserHelper:63 - Error Message: [{"username":"luohao2017","error":{"code":899001,"message":"user exist"}}]
+11:52:06,704  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:07,280  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:07,282  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:07,283  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:07,285  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:07,287  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:07,302 DEBUG NativeHttpClient:121 - Send request - POST https://api.im.jpush.cn/v1/users
+11:52:07,302 DEBUG NativeHttpClient:123 - Request Content - [{"username":"luohao2017","password":"luo140610"}]
+11:52:07,339 DEBUG NativeHttpClient:248 - Connection IO error. 
+Can not connect to JPush Server. Please ensure your internet connection is ok. 
+If the problem persists, please let us know at support@jpush.cn.
+java.net.UnknownHostException: api.im.jpush.cn
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1316)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1291)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:250)
+	at cn.jiguang.common.connection.NativeHttpClient._doRequest(NativeHttpClient.java:161)
+	at cn.jiguang.common.connection.NativeHttpClient.doRequest(NativeHttpClient.java:99)
+	at cn.jiguang.common.connection.NativeHttpClient.sendPost(NativeHttpClient.java:86)
+	at cn.jmessage.api.user.UserClient.registerUsers(UserClient.java:72)
+	at cn.jmessage.api.JMessageClient.registerUsers(JMessageClient.java:120)
+	at cn.nexuslink.WeNavi.common.JUserHelper.registerUsers(JUserHelper.java:55)
+	at cn.nexuslink.WeNavi.common.JUserHelper.main(JUserHelper.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+11:52:07,346 ERROR JUserHelper:61 - Connection error. Should retry later. 
+cn.jiguang.common.resp.APIConnectionException: Connection IO error. 
+Can not connect to JPush Server. Please ensure your internet connection is ok. 
+If the problem persists, please let us know at support@jpush.cn.
+	at cn.jiguang.common.connection.NativeHttpClient._doRequest(NativeHttpClient.java:249)
+	at cn.jiguang.common.connection.NativeHttpClient.doRequest(NativeHttpClient.java:99)
+	at cn.jiguang.common.connection.NativeHttpClient.sendPost(NativeHttpClient.java:86)
+	at cn.jmessage.api.user.UserClient.registerUsers(UserClient.java:72)
+	at cn.jmessage.api.JMessageClient.registerUsers(JMessageClient.java:120)
+	at cn.nexuslink.WeNavi.common.JUserHelper.registerUsers(JUserHelper.java:55)
+	at cn.nexuslink.WeNavi.common.JUserHelper.main(JUserHelper.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+Caused by: java.net.UnknownHostException: api.im.jpush.cn
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1316)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1291)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:250)
+	at cn.jiguang.common.connection.NativeHttpClient._doRequest(NativeHttpClient.java:161)
+	... 11 more
+11:52:39,377  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:39,990  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:39,992  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:39,994  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:39,996  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:39,998  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:52:40,019 DEBUG NativeHttpClient:121 - Send request - POST https://api.im.jpush.cn/v1/users
+11:52:40,020 DEBUG NativeHttpClient:123 - Request Content - [{"username":"luohao2017","password":"luo140610"}]
+11:52:40,564 DEBUG ResponseWrapper:40 - JPush API Rate Limiting params - quota:600, remaining:599, reset:60
+11:52:40,564  WARN NativeHttpClient:199 - Got error response - responseCode:403, responseContent:[{"username":"luohao2017","error":{"code":899001,"message":"user exist"}}]
+11:52:40,564 ERROR NativeHttpClient:211 - Request is forbidden! Maybe your appkey is listed in blacklist or your params is invalid.
+11:52:40,601 ERROR JUserHelper:63 - Error response from JPush server. Should review and fix it. 
+{}
+	at cn.jiguang.common.connection.NativeHttpClient._doRequest(NativeHttpClient.java:235)
+	at cn.jiguang.common.connection.NativeHttpClient.doRequest(NativeHttpClient.java:99)
+	at cn.jiguang.common.connection.NativeHttpClient.sendPost(NativeHttpClient.java:86)
+	at cn.jmessage.api.user.UserClient.registerUsers(UserClient.java:72)
+	at cn.jmessage.api.JMessageClient.registerUsers(JMessageClient.java:120)
+	at cn.nexuslink.WeNavi.common.JUserHelper.registerUsers(JUserHelper.java:55)
+	at cn.nexuslink.WeNavi.common.JUserHelper.main(JUserHelper.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+11:52:40,612  INFO JUserHelper:64 - HTTP Status: 403
+11:52:40,612  INFO JUserHelper:65 - Error Message: [{"username":"luohao2017","error":{"code":899001,"message":"user exist"}}]
+11:53:28,148  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:53:28,708  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:53:28,709  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:53:28,710  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:53:28,712  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:53:28,717  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:53:28,731 DEBUG NativeHttpClient:121 - Send request - POST https://api.im.jpush.cn/v1/users
+11:53:28,731 DEBUG NativeHttpClient:123 - Request Content - [{"username":"luohao2017","password":"luo140610"}]
+11:53:29,667 DEBUG ResponseWrapper:40 - JPush API Rate Limiting params - quota:600, remaining:598, reset:11
+11:53:29,667  WARN NativeHttpClient:199 - Got error response - responseCode:403, responseContent:[{"username":"luohao2017","error":{"code":899001,"message":"user exist"}}]
+11:53:29,668 ERROR NativeHttpClient:211 - Request is forbidden! Maybe your appkey is listed in blacklist or your params is invalid.
+11:53:29,678 ERROR JUserHelper:64 - Error response from JPush server. Should review and fix it. 
+{}
+	at cn.jiguang.common.connection.NativeHttpClient._doRequest(NativeHttpClient.java:235)
+	at cn.jiguang.common.connection.NativeHttpClient.doRequest(NativeHttpClient.java:99)
+	at cn.jiguang.common.connection.NativeHttpClient.sendPost(NativeHttpClient.java:86)
+	at cn.jmessage.api.user.UserClient.registerUsers(UserClient.java:72)
+	at cn.jmessage.api.JMessageClient.registerUsers(JMessageClient.java:120)
+	at cn.nexuslink.WeNavi.common.JUserHelper.registerUsers(JUserHelper.java:56)
+	at cn.nexuslink.WeNavi.common.JUserHelper.main(JUserHelper.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+11:53:29,693  INFO JUserHelper:65 - HTTP Status: 403
+11:53:29,694  INFO JUserHelper:66 - Error Message: [{"username":"luohao2017","error":{"code":899001,"message":"user exist"}}]
+11:58:36,376  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:58:36,983  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:58:36,985  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:58:36,987  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:58:36,989  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:58:36,990  INFO NativeHttpClient:55 - Created instance with connectionTimeout 5,000, readTimeout 30,000, maxRetryTimes 3, SSL Version TLS
+11:58:37,002 DEBUG NativeHttpClient:121 - Send request - POST https://api.im.jpush.cn/v1/users
+11:58:37,002 DEBUG NativeHttpClient:123 - Request Content - [{"username":"Rye2017","password":"rye140610"}]
+11:58:37,547 DEBUG ResponseWrapper:40 - JPush API Rate Limiting params - quota:600, remaining:599, reset:60
+11:58:37,548 DEBUG NativeHttpClient:192 - Succeed to get response OK - responseCode:201
+11:58:37,548 DEBUG NativeHttpClient:193 - Response Content - [{"username":"Rye2017"}]
+11:58:37,548  INFO JUserHelper:60 - [{"username":"Rye2017"}]

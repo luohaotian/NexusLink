@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.nexuslink.WeNavi.dao.IMessageDao">
+    <insert id="saveMessage" parameterType="MessageForm" >
+        INSERT INTO
+        tb_message (from_username,to_username,target_type,msg_type,content,offline,ctime)
+        VALUES
+        (#{msg.fromUsername},#{msg.toUsername},#{msg.targetType},#{msg.content},#{msg.offline},#{msg.ctime})
+    </insert>
+
+
+
+</mapper>

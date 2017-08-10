@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration   PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <typeAlias alias="UserDoResultMap" type="cn.nexuslink.WeNavi.model.UserDo" />
+        <typeAlias alias="UserVoResultMap" type="cn.nexuslink.WeNavi.model.vo.UserVo"/>
+        <typeAlias alias="MessageDoResultMap" type="cn.nexuslink.WeNavi.model.MessageDo"/>
+        <typeAlias alias="MessageForm" type="cn.nexuslink.WeNavi.model.form.MessageSendForm"/>
+        <typeAlias alias="MessageVoResultmap" type="cn.nexuslink.WeNavi.model.vo.MessageVo"/>
+        <typeAlias alias="UserVoResultmap" type="cn.nexuslink.WeNavi.model.vo.UserVo"/>
+        <typeAlias alias="UpdateForm" type="cn.nexuslink.WeNavi.model.form.UpdateForm"/>
+    </typeAliases>
+</configuration>

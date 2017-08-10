@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.nexuslink.WeNavi.dao.IUserDao">
+    <update id="updateInfo" parameterType="UpdateForm">
+        UPDATE tb_user
+        <set>
+            <if test="user.nickname!=null">nickname=#{user.nickname},</if>
+            <if test="user.birthday!=null">birthday=#{user.birthday},</if>
+            <if test="user.gender!=0">gender=#{user.gender},</if>
+            <if test="user.signature!=null">signature=#{user.signature},</if>
+            <if test="user.address!=null">address=#{user.address},</if>
+            mtime=#{user.mtime}
+        </set>
+        WHERE username=#{user.username}
+    </update>
+
+
+
+</mapper>

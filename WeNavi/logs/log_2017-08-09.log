@@ -1,0 +1,65 @@
+11:51:05,806 DEBUG saveUser:139 - ==>  Preparing: insert into tb_user (username,password,ctime,mtime) values (?, ?,?,?) 
+11:51:05,847 DEBUG saveUser:139 - ==> Parameters: luohao(String), luo140610(String), 2017-08-09 11:51:05.0(Timestamp), 2017-08-09 11:51:05.0(Timestamp)
+11:51:05,963 DEBUG saveUser:139 - <==    Updates: 1
+11:51:05,973 DEBUG saveUser:139 - ==>  Preparing: insert into tb_user (username,password,ctime,mtime) values (?, ?,?,?) 
+11:51:05,974 DEBUG saveUser:139 - ==> Parameters: Rye(String), RyeGe(String), 2017-08-09 11:51:05.0(Timestamp), 2017-08-09 11:51:05.0(Timestamp)
+11:51:06,014 DEBUG saveUser:139 - <==    Updates: 1
+12:19:01,644 DEBUG saveUser:139 - ==>  Preparing: insert into tb_user (username,password,ctime,mtime) values (?, ?,?,?) 
+12:19:01,669 DEBUG saveUser:139 - ==> Parameters: luohao(String), luo140610(String), 2017-08-09 12:19:01.0(Timestamp), 2017-08-09 12:19:01.0(Timestamp)
+12:19:01,724 DEBUG saveUser:139 - <==    Updates: 1
+12:19:01,734 DEBUG existUser:139 - ==>  Preparing: Select uid from tb_user where username = ? 
+12:19:01,734 DEBUG existUser:139 - ==> Parameters: luohao(String)
+12:19:01,801 DEBUG existUser:139 - <==      Total: 2
+12:21:27,370 DEBUG saveUser:139 - ==>  Preparing: insert into tb_user (username,password,ctime,mtime) values (?, ?,?,?) 
+12:21:27,398 DEBUG saveUser:139 - ==> Parameters: Rye(String), RyeGe(String), 2017-08-09 12:21:27.0(Timestamp), 2017-08-09 12:21:27.0(Timestamp)
+12:21:27,586 DEBUG existUser:139 - ==>  Preparing: Select uid from tb_user where username = ? 
+12:21:27,586 DEBUG existUser:139 - ==> Parameters: luohao(String)
+12:21:27,605 DEBUG existUser:139 - <==      Total: 1
+12:21:27,620 DEBUG existUser:139 - ==>  Preparing: Select uid from tb_user where username = ? 
+12:21:27,621 DEBUG existUser:139 - ==> Parameters: Rye(String)
+12:21:27,622 DEBUG existUser:139 - <==      Total: 1
+12:25:05,172 DEBUG updateInfo:139 - ==>  Preparing: update tb_user set avator=?, nickname=?,birthday=?,gender=?,signature=?,address=?,mtime=?where username=? 
+12:27:59,391 DEBUG updateInfo:139 - ==>  Preparing: update tb_user set nickname=?,birthday=?,gender=?,signature=?,address=?,mtime=?where username=? 
+12:27:59,417 DEBUG updateInfo:139 - ==> Parameters: null, null, 1(Integer), null, 重庆(String), null, luohao(String)
+12:30:21,684 DEBUG updateInfo:139 - ==>  Preparing: update tb_user set nickname=?,birthday=?,gender=?,signature=?,address=?,mtime=?where username=? 
+12:30:21,717 DEBUG updateInfo:139 - ==> Parameters: 追风上年(String), null, 1(Integer), null, 重庆(String), null, luohao(String)
+12:39:09,902 DEBUG updateInfo:139 - ==>  Preparing: update tb_user set nickname=?,birthday=?,gender=?,signature=?,address=?,mtime=?where username=? 
+12:39:09,959 DEBUG updateInfo:139 - ==> Parameters: 追风上年(String), null, 1(Integer), null, 重庆(String), null, Rye(String)
+12:44:53,389 DEBUG updateInfo:139 - ==>  Preparing: update tb_user set nickname=?,birthday=?,gender=?,signature=?,address=?,mtime=?where username=? 
+12:44:53,439 DEBUG updateInfo:139 - ==> Parameters: 追风上年(String), null, 1(Integer), null, 重庆(String), null, Rye(String)
+12:46:25,845 DEBUG updateInfo:139 - ==>  Preparing: update tb_user set nickname=?,birthday=?,gender=?,signature=?,address=?,mtime=? where username=? 
+12:46:25,881 DEBUG updateInfo:139 - ==> Parameters: 追风上年(String), null, 1(Integer), null, 重庆(String), null, Rye(String)
+12:46:25,979 DEBUG updateInfo:139 - <==    Updates: 1
+15:44:38,034 DEBUG updateInfo:139 - ==>  Preparing: update tb_user set nickname=?,birthday=?,gender=?,signature=?,address=?,mtime=? where username=? 
+15:44:38,080 DEBUG updateInfo:139 - ==> Parameters: null, null, 2(Integer), null, null, null, Rye(String)
+15:44:38,138 DEBUG updateInfo:139 - <==    Updates: 1
+16:15:59,619 DEBUG saveUser:139 - ==>  Preparing: insert into tb_user (username,password,ctime,mtime) values (?, ?,?,?) 
+16:15:59,649 DEBUG saveUser:139 - ==> Parameters: Rye(String), RyeGe(String), 2017-08-09 16:15:59.0(Timestamp), 2017-08-09 16:15:59.0(Timestamp)
+16:15:59,797 DEBUG existUser:139 - ==>  Preparing: Select uid from tb_user where username = ? 
+16:15:59,798 DEBUG existUser:139 - ==> Parameters: luohao(String)
+16:15:59,807 DEBUG existUser:139 - <==      Total: 1
+16:15:59,819 DEBUG existUser:139 - ==>  Preparing: Select uid from tb_user where username = ? 
+16:15:59,820 DEBUG existUser:139 - ==> Parameters: Rye(String)
+16:15:59,820 DEBUG existUser:139 - <==      Total: 1
+16:20:27,694 DEBUG updateInfo:139 - ==>  Preparing: UPDATE member SET nickname=?, gender=?, email=?, mtime=? WHERE username=? 
+16:21:43,021 DEBUG updateInfo:139 - ==>  Preparing: UPDATE member SET nickname=?, gender=?, address=?, mtime=? WHERE username=? 
+16:22:44,072 DEBUG updateInfo:139 - ==>  Preparing: UPDATE member SET nickname=?, gender=?, address=?, mtime=? WHERE username=? 
+16:22:44,104 DEBUG updateInfo:139 - ==> Parameters: 大佬(String), 0(Integer), 重庆(String), 2017-08-09 16:22:44.0(Timestamp), Rye(String)
+16:23:25,020 DEBUG updateInfo:139 - ==>  Preparing: UPDATE tb_user SET nickname=?, gender=?, address=?, mtime=? WHERE username=? 
+16:23:25,062 DEBUG updateInfo:139 - ==> Parameters: 大佬(String), 0(Integer), 重庆(String), 2017-08-09 16:23:24.0(Timestamp), Rye(String)
+16:23:25,192 DEBUG updateInfo:139 - <==    Updates: 1
+16:25:11,897 DEBUG updateInfo:139 - ==>  Preparing: UPDATE tb_user SET nickname=?, gender=?, address=?, mtime=? WHERE username=? 
+16:25:11,935 DEBUG updateInfo:139 - ==> Parameters: 大佬(String), 1(Integer), 四川(String), 2017-08-09 16:25:11.0(Timestamp), Rye(String)
+16:25:12,008 DEBUG updateInfo:139 - <==    Updates: 1
+16:25:41,571 DEBUG updateInfo:139 - ==>  Preparing: UPDATE tb_user SET nickname=?, gender=?, mtime=? WHERE username=? 
+16:25:41,604 DEBUG updateInfo:139 - ==> Parameters: 大佬(String), 1(Integer), 2017-08-09 16:25:41.0(Timestamp), Rye(String)
+16:25:41,688 DEBUG updateInfo:139 - <==    Updates: 1
+16:26:27,209 DEBUG updateInfo:139 - ==>  Preparing: UPDATE tb_user SET nickname=?, gender=?, address=?, mtime=? WHERE username=? 
+16:26:27,241 DEBUG updateInfo:139 - ==> Parameters: 大佬(String), 0(Integer), 四川(String), 2017-08-09 16:26:27.0(Timestamp), Rye(String)
+16:26:27,325 DEBUG updateInfo:139 - <==    Updates: 1
+16:28:49,804 DEBUG updateInfo:139 - ==>  Preparing: UPDATE tb_user SET nickname=?, gender=?, address=?, mtime=? WHERE username=? 
+16:28:49,838 DEBUG updateInfo:139 - ==> Parameters: 大佬(String), 1(Integer), 四川(String), 2017-08-09 16:28:49.0(Timestamp), Rye(String)
+16:28:49,931 DEBUG updateInfo:139 - <==    Updates: 1
+16:29:18,418 DEBUG updateInfo:139 - ==>  Preparing: UPDATE tb_user SET nickname=?, mtime=? WHERE username=? 
+16:29:18,451 DEBUG updateInfo:139 - ==> Parameters: 大佬(String), 2017-08-09 16:29:18.0(Timestamp), Rye(String)
+16:29:18,646 DEBUG updateInfo:139 - <==    Updates: 1

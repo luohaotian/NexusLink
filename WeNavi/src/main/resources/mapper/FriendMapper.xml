@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.nexuslink.WeNavi.dao.IFriendDao">
+    <select id="listFriend" parameterType="String" resultMap="UserVoResultmap">
+        select
+        u.id as uid,
+        u.username as username,
+        u.nickname as nickname,
+        u.avatar as avatar,
+        f.remark as remark
+        from
+        tb_friend f
+        left join
+        tb_user u
+        on
+        u.id = f.friend_id
+        where
+        f.username = #{username}
+    </select>
+
+</mapper>
